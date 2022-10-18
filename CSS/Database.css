@@ -1,0 +1,30 @@
+#database a {
+    color: #80AB82;
+}
+
+.datTabulka {
+    width: 75%;
+    text-align: left;
+    position: relative;
+    left:50%;
+    transform: translateX(-50%);
+    border-collapse: collapse;
+    padding: 8px;
+}
+
+.datTabulka th, td {
+    border:1px solid black;
+}
+
+.datTabulka tr:first-child {
+    background-color: #214F4B;
+    color: #80AB82;
+}
+
+@media screen and (max-width: 800px) {
+
+.content {
+    margin: 100px 0px;
+}
+
+}

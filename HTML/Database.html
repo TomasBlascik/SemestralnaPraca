@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/Styles.css">
+    <link rel="stylesheet" href="../CSS/Database.css">
+    <meta charset="UTF-8">
+    <title>Database</title>
+</head>
+
+<body>
+<nav>
+    <ul class="navbar" id="myMenuNavBar">
+        <li class="navbar-item menu-item" id="home"><a href ="index.html">Home</a></li>
+        <li class="navbar-item menu-item" id="database"><a href ="Database.html">Database</a></li>
+        <li class="navbar-item menu-item" id="about"><a href ="About.html">About</a></li>
+        <li class="navbar-item" id="burger-menu">
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<div class="content">
+    <table class = "datTabulka">
+        <tr>
+            <th>Movie/TV Show</th>
+            <th>Director</th>
+            <th>Year</th>
+        </tr>
+        <tr>
+            <td>Inception</td>
+            <td>Nolan</td>
+            <td>2010</td>
+        </tr>
+        <tr>
+            <td>Peaky Blinders</td>
+            <td>more</td>
+            <td>2013</td>
+        </tr>
+        <tr>
+            <td>Narcos</td>
+            <td>more</td>
+            <td>2015</td>
+        </tr>
+        <tr>
+            <td>Fight Club</td>
+            <td>Fincher</td>
+            <td>1999</td>
+        </tr>
+        <tr>
+            <td>Mr. Robot</td>
+            <td>more</td>
+            <td>2015</td>
+        </tr>
+        <tr>
+            <td>Tenet</td>
+            <td>Nolan</td>
+            <td>2020</td>
+        </tr>
+        <tr>
+            <td>Game of Thrones</td>
+            <td>more</td>
+            <td>2011</td>
+        </tr>
+        <tr>
+            <td>Snatch</td>
+            <td>Ritchie</td>
+            <td>2000</td>
+        </tr>
+        <tr>
+            <td>Django Unchained</td>
+            <td>Tarantino</td>
+            <td>2012</td>
+        </tr>
+        <tr>
+            <td>Vikings</td>
+            <td>more</td>
+            <td>2012</td>
+        </tr>
+    </table>
+</div>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("myMenuNavBar");
+        if (x.className === "navbar") {
+            x.className += " responsive";
+        } else {
+            x.className = "navbar";
+        }
+    }
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+#about a {
+    color: #80AB82;
+}
+
+.mapouter {
+    text-align:right;
+    height:500px;
+    width:500px;
+}
+
+.gmap_canvas
+{
+    overflow:hidden;
+    background:none!important;
+    height:500px;
+    width:500px;
+}
+
+.gmap_canvas iframe{
+    width: 500px;
+    height: 500px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.kontakt {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    list-style-type: none;
+}
+
