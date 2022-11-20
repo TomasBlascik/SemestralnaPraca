@@ -13,9 +13,9 @@
 <body>
     <nav>
         <ul class="navbar" id="myMenuNavBar">
-            <li class="navbar-item menu-item" id="home"><a href ="index.html">Home</a></li>
-            <li class="navbar-item menu-item" id="database"><a href ="Database.html">Database</a></li>
-            <li class="navbar-item menu-item" id="about"><a href ="About.html">About</a></li>
+            <li class="navbar-item menu-item" id="home"><a href ="index.php">Home</a></li>
+            <li class="navbar-item menu-item" id="database"><a href ="Database.php">Database</a></li>
+            <li class="navbar-item menu-item" id="about"><a href ="About.php">About</a></li>
             <li class="navbar-item" id="burger-menu">
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                 <i class="fa fa-bars"></i>
