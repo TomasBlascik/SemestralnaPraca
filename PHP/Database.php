@@ -3,6 +3,19 @@ include "DBstorage.php";
 include "TableRecord.php";
 
 $db = new DBstorage();
+try {
+    if (isset($_POST['name']) && isset($_POST['director']) && isset($_POST['year'])) {
+        $newRecord = new TableRecord();
+        $newRecord->name = $_POST['name'];
+        $newRecord->director = $_POST['director'];
+        $newRecord->year = $_POST['year'];
+        $db->storeRecord($newRecord);
+    }
+} catch (Exception $e) {
+    header("Location: ?");
+}
+
+
 
 ?>
 
