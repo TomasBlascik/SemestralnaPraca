@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<?php
+include "DBstorage.php";
+include "TableRecord.php";
+
+$db = new DBstorage();
+
+?>
+
 <html lang="en">
 
 <head>
@@ -31,57 +38,25 @@
             <th>Director</th>
             <th>Year</th>
         </tr>
-        <tr>
-            <td>Inception</td>
-            <td>Nolan</td>
-            <td>2010</td>
-        </tr>
-        <tr>
-            <td>Peaky Blinders</td>
-            <td>more</td>
-            <td>2013</td>
-        </tr>
-        <tr>
-            <td>Narcos</td>
-            <td>more</td>
-            <td>2015</td>
-        </tr>
-        <tr>
-            <td>Fight Club</td>
-            <td>Fincher</td>
-            <td>1999</td>
-        </tr>
-        <tr>
-            <td>Mr. Robot</td>
-            <td>more</td>
-            <td>2015</td>
-        </tr>
-        <tr>
-            <td>Tenet</td>
-            <td>Nolan</td>
-            <td>2020</td>
-        </tr>
-        <tr>
-            <td>Game of Thrones</td>
-            <td>more</td>
-            <td>2011</td>
-        </tr>
-        <tr>
-            <td>Snatch</td>
-            <td>Ritchie</td>
-            <td>2000</td>
-        </tr>
-        <tr>
-            <td>Django Unchained</td>
-            <td>Tarantino</td>
-            <td>2012</td>
-        </tr>
-        <tr>
-            <td>Vikings</td>
-            <td>more</td>
-            <td>2012</td>
-        </tr>
+            <?php
+            /** @var DBstorage $db */
+            foreach ($db->getAllRecords() as $record) { ?>
+                <tr>
+                    <td><?php echo $record->name ?></td>
+                    <td><?php echo $record->director ?></td>
+                    <td><?php echo $record->year ?></td>
+                </tr>
+            <?php } ?>
     </table>
+
+    <div>
+        <form method="post">
+            <input type="text" name="name" placeholder="Movie name">
+            <input type="text" name="director" placeholder="Director name">
+            <input type="number" name="year"  placeholder="Year">
+            <input type="submit" value="Send">
+        </form>
+    </div>
 </div>
 
 <script>
