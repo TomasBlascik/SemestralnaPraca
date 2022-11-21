@@ -3,6 +3,12 @@ include "DBstorage.php";
 include "TableRecord.php";
 
 $db = new DBstorage();
+
+if (isset($_GET['delete'])) {
+    $db->removeRecord($_GET['delete']);
+}
+
+
 try {
     if (isset($_POST['name']) && isset($_POST['director']) && isset($_POST['year'])) {
         $newRecord = new TableRecord();
@@ -58,6 +64,7 @@ try {
                     <td><?php echo $record->name ?></td>
                     <td><?php echo $record->director ?></td>
                     <td><?php echo $record->year ?></td>
+                    <td><a href="?delete=<?php echo $record->id ?>"><button>Delete</button></a></td>
                 </tr>
             <?php } ?>
     </table>
