@@ -21,6 +21,10 @@
     color: #80AB82;
 }
 
+.no-border {
+    border: none;
+}
+
 @media screen and (max-width: 800px) {
 
 .content {

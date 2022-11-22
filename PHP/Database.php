@@ -4,6 +4,16 @@ include "TableRecord.php";
 
 $db = new DBstorage();
 
+if (isset($_GET['edit']) && isset($_POST['id'])) {
+    $updateRecord = $db->loadOneRecord($_POST['id']);
+    $updateRecord->name = $_POST['name'];
+    $updateRecord->director = $_POST['director'];
+    $updateRecord->year = $_POST['year'];
+    $db->storeRecord($updateRecord);
+    header("Location: ?");
+    die();
+}
+
 if (isset($_GET['delete'])) {
     $db->removeRecord($_GET['delete']);
 }
@@ -20,8 +30,6 @@ try {
 } catch (Exception $e) {
     header("Location: ?");
 }
-
-
 
 ?>
 
@@ -50,6 +58,24 @@ try {
     </ul>
 </nav>
 
+<?php
+if (isset($_GET['edit'])) {
+    /** @var TableRecord $record */
+    /** @var DB $db */
+    $record = $db->loadOneRecord($_GET['edit']);
+?>
+<div class="content">
+    <div>
+        <form method="post">
+            <textarea type="text" name="name"><?php echo $record->name ?></textarea>
+            <textarea type="text" name="director"><?php echo $record->director ?></textarea>
+            <textarea type="number" name="year"><?php echo $record->year ?></textarea>
+            <input type="submit" value="Save">
+            <input type="hidden" name="id" value="<?php echo $record->id ?>">
+        </form>
+    </div>
+</div>
+<?php } else { ?>
 <div class="content">
     <table class = "datTabulka">
         <tr>
@@ -64,7 +90,8 @@ try {
                     <td><?php echo $record->name ?></td>
                     <td><?php echo $record->director ?></td>
                     <td><?php echo $record->year ?></td>
-                    <td><a href="?delete=<?php echo $record->id ?>"><button>Delete</button></a></td>
+                    <td class="no-border"><a href="?delete=<?php echo $record->id ?>"><button>Delete</button></a></td>
+                    <td class="no-border"><a href="?edit=<?php echo $record->id ?>"><button>Edit</button></a></td>
                 </tr>
             <?php } ?>
     </table>
@@ -78,6 +105,7 @@ try {
         </form>
     </div>
 </div>
+<?php } ?>
 
 <script>
     function myFunction() {
