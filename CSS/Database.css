@@ -34,6 +34,24 @@
     border: none;
 }
 
+.button {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+.del {
+    background: maroon;
+}
+
+.edit {
+    background: orange;
+}
+
 @media screen and (max-width: 800px) {
 
 .content {

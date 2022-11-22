@@ -6,13 +6,13 @@ $db = new DBstorage();
 
 try {
     if (isset($_GET['edit']) && isset($_POST['id'])) {
-        $updateRecord = $db->loadOneRecord($_POST['id']);
-        $updateRecord->name = $_POST['name'];
-        $updateRecord->director = $_POST['director'];
-        $updateRecord->year = $_POST['year'];
-        $db->storeRecord($updateRecord);
-        header("Location: ?");
-        die();
+            $updateRecord = $db->loadOneRecord($_POST['id']);
+            $updateRecord->name = $_POST['name'];
+            $updateRecord->director = $_POST['director'];
+            $updateRecord->year = $_POST['year'];
+            $db->storeRecord($updateRecord);
+            header("Location: ?");
+            die();
     }
 } catch (Exception $e) {
     header("Location: ?");
@@ -36,6 +36,7 @@ try {
 
 ?>
 
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -69,7 +70,7 @@ if (isset($_GET['edit'])) {
 ?>
 <div class="content">
     <div>
-        <form method="post">
+        <form id="edit-form" method="post">
             <textarea type="text" name="name" required><?php echo $record->name ?></textarea>
             <textarea type="text" name="director" required><?php echo $record->director ?></textarea>
             <textarea type="number" name="year" required><?php echo $record->year ?></textarea>
@@ -85,6 +86,8 @@ if (isset($_GET['edit'])) {
             <th>Movie/TV Show</th>
             <th>Director</th>
             <th>Year</th>
+            <th>Delete</th>
+            <th>Edit</th>
         </tr>
             <?php
             /** @var DBstorage $db */
@@ -93,8 +96,8 @@ if (isset($_GET['edit'])) {
                     <td><?php echo $record->name ?></td>
                     <td><?php echo $record->director ?></td>
                     <td><?php echo $record->year ?></td>
-                    <td class="no-border"><a href="?delete=<?php echo $record->id ?>"><button>Delete</button></a></td>
-                    <td class="no-border"><a href="?edit=<?php echo $record->id ?>"><button>Edit</button></a></td>
+                    <td class="no-border"><a class = "button del" href="?delete=<?php echo $record->id ?>">Delete</a></td>
+                    <td class="no-border"><a class = "button edit" href="?edit=<?php echo $record->id ?>">Edit</a></td>
                 </tr>
             <?php } ?>
     </table>
