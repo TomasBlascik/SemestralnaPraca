@@ -4,20 +4,23 @@ include "TableRecord.php";
 
 $db = new DBstorage();
 
-if (isset($_GET['edit']) && isset($_POST['id'])) {
-    $updateRecord = $db->loadOneRecord($_POST['id']);
-    $updateRecord->name = $_POST['name'];
-    $updateRecord->director = $_POST['director'];
-    $updateRecord->year = $_POST['year'];
-    $db->storeRecord($updateRecord);
+try {
+    if (isset($_GET['edit']) && isset($_POST['id'])) {
+        $updateRecord = $db->loadOneRecord($_POST['id']);
+        $updateRecord->name = $_POST['name'];
+        $updateRecord->director = $_POST['director'];
+        $updateRecord->year = $_POST['year'];
+        $db->storeRecord($updateRecord);
+        header("Location: ?");
+        die();
+    }
+} catch (Exception $e) {
     header("Location: ?");
-    die();
 }
 
-if (isset($_GET['delete'])) {
+if (isset($_GET['delete']) && ($_GET['delete'] != null)) {
     $db->removeRecord($_GET['delete']);
 }
-
 
 try {
     if (isset($_POST['name']) && isset($_POST['director']) && isset($_POST['year'])) {
@@ -67,9 +70,9 @@ if (isset($_GET['edit'])) {
 <div class="content">
     <div>
         <form method="post">
-            <textarea type="text" name="name"><?php echo $record->name ?></textarea>
-            <textarea type="text" name="director"><?php echo $record->director ?></textarea>
-            <textarea type="number" name="year"><?php echo $record->year ?></textarea>
+            <textarea type="text" name="name" required><?php echo $record->name ?></textarea>
+            <textarea type="text" name="director" required><?php echo $record->director ?></textarea>
+            <textarea type="number" name="year" required><?php echo $record->year ?></textarea>
             <input type="submit" value="Save">
             <input type="hidden" name="id" value="<?php echo $record->id ?>">
         </form>
@@ -95,13 +98,12 @@ if (isset($_GET['edit'])) {
                 </tr>
             <?php } ?>
     </table>
-
-    <div>
+    <div id="movie-add">
         <form method="post">
-            <input type="text" name="name" placeholder="Movie name">
-            <input type="text" name="director" placeholder="Director name">
-            <input type="number" name="year"  placeholder="Year">
-            <input type="submit" value="Send">
+            <input type="text" name="name" placeholder="Movie name" required>
+            <input type="text" name="director" placeholder="Director name" required>
+            <input type="number" name="year"  placeholder="Year" required>
+            <input type="submit" value="Add movie">
         </form>
     </div>
 </div>

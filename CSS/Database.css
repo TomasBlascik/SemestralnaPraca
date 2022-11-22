@@ -21,6 +21,15 @@
     color: #80AB82;
 }
 
+#movie-add {
+    width: 75%;
+    text-align: left;
+    position: relative;
+    left:50%;
+    transform: translateX(-50%);
+    padding: 8px;
+}
+
 .no-border {
     border: none;
 }
