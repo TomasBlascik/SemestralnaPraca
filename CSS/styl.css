@@ -32,7 +32,7 @@ iframe {
 }
 
 .form-control {
-    width: 25%;
+    width: 100%;
 }
 
 .table-hover tbody tr:hover td {
@@ -41,4 +41,10 @@ iframe {
 
 .nav-link:hover {
     color: white;
+}
+
+form {
+    margin: 0 auto;
+    width: 25%;
+    text-align: center;
 }
