@@ -14,3 +14,31 @@
 #websiteTitle {
     color: black;
 }
+
+iframe {
+    bottom: 0;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    position: absolute;
+}
+
+.table-group-divider {
+    border-top-color: cadetblue;
+}
+
+#contactCard {
+    width: 50%;
+}
+
+.form-control {
+    width: 25%;
+}
+
+.table-hover tbody tr:hover td {
+    color: cadetblue;
+}
+
+.nav-link:hover {
+    color: white;
+}
