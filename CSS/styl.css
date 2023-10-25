@@ -1,0 +1,16 @@
+.navbar {
+    background-color: #214F4B;
+    border-bottom: 1px solid black;
+}
+
+.navbar-brand img {
+    width: 50px;
+}
+
+.btn-success {
+    margin: 10px 0 10px 0;
+}
+
+#websiteTitle {
+    color: black;
+}

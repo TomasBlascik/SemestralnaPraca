@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movie</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/styl.css">
+</head>
+
+<body>
+    <!--Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="">
+                <img src="../IMG/logo.png">
+            </a>
+            <a href="../HTML/index.html" id="websiteTitle" class="navbar-brand">Watch it</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/movie.html">Movies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/about.html">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/register.html">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Obsah-->
+    <div class="container-fluid mt-3">
+        <div class="web-content">
+            <div>
+                <a class = "btn btn-success col-12">Add new</a>
+            </div>
+            <table class="table table-dark">
+                <thead>
+                <tr>
+                    <th scope="col">Movie/TV Show</th>
+                    <th scope="col">Director/Creator</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">Delete</th>
+                    <th scope="col">Edit</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>The Matrix</td>
+                    <td>Lana Wachowski, Lilly Wachowski</td>
+                    <td>1999</td>
+                    <td><a class = "btn btn-danger">Delete</a></td>
+                    <td><a class = "btn btn-warning">Edit</a></td>
+                </tr>
+                <tr>
+                    <td>Fight Club</td>
+                    <td>David Fincher</td>
+                    <td>1999</td>
+                    <td><a class = "btn btn-danger">Delete</a></td>
+                    <td><a class = "btn btn-warning">Edit</a></td>
+                </tr>
+                <tr>
+                    <td>Succession</td>
+                    <td>Jesse Armstrong</td>
+                    <td>2018-2023</td>
+                    <td><a class = "btn btn-danger">Delete</a></td>
+                    <td><a class = "btn btn-warning">Edit</a></td>
+                </tr>
+                <tr>
+                    <td>Inception</td>
+                    <td>Christopher Nolan</td>
+                    <td>2010</td>
+                    <td><a class = "btn btn-danger">Delete</a></td>
+                    <td><a class = "btn btn-warning">Edit</a></td>
+                </tr>
+                <tr>
+                    <td>Snatch</td>
+                    <td>Guy Richie</td>
+                    <td>2000</td>
+                    <td><a class = "btn btn-danger">Delete</a></td>
+                    <td><a class = "btn btn-warning">Edit</a></td>
+                </tr>
+                <tr>
+                    <td>Peaky Blinders</td>
+                    <td>Steven Knight</td>
+                    <td>2013-2022</td>
+                    <td><a class = "btn btn-danger">Delete</a></td>
+                    <td><a class = "btn btn-warning">Edit</a></td>
+                </tr>
+                <tr>
+                    <td>Django Unchained</td>
+                    <td>Quentin Tarantino</td>
+                    <td>2012</td>
+                    <td><a class = "btn btn-danger">Delete</a></td>
+                    <td><a class = "btn btn-warning">Edit</a></td>
+                </tr>
+                <tr>
+                    <td>Game of Thrones</td>
+                    <td>David Benioff, D.B. Weiss</td>
+                    <td>2011-2019</td>
+                    <td><a class = "btn btn-danger">Delete</a></td>
+                    <td><a class = "btn btn-warning">Edit</a></td>
+                </tr>
+                <tr>
+                    <td>Dune: Part One</td>
+                    <td>Denis Villeneuve</td>
+                    <td>2021</td>
+                    <td><a class = "btn btn-danger">Delete</a></td>
+                    <td><a class = "btn btn-warning">Edit</a></td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</body>
+</html>
