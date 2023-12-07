@@ -6,8 +6,6 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-<!--    <meta charset="utf-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
     <title><?= \App\Config\Configuration::APP_NAME ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -16,7 +14,7 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="public/css/styl.css">
-    <script src="public/js/script.js"></script>
+    <script type="text/javascript" src="../../public/js/script.js"></script>
 </head>
 
 <body>
@@ -39,7 +37,7 @@
                         <a class="nav-link" href="<?= $link->url("movies.index") ?>">Movies</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= $link->url("movies.index") ?>">About</a>
+                        <a class="nav-link" href="<?= $link->url("about.index") ?>">About</a>
                     </li>
                 </ul>
                 <?php if ($auth->isLogged()) { ?>
