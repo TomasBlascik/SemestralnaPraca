@@ -28,11 +28,15 @@ class MoviesController extends AControllerBase
         $id = $this->request()->getValue('id');
         $movie = ( $id ? Movie::getOne($id) : new Movie());
 
-        $movie->setName($this->request()->getValue('name'));
-        $movie->setDirector($this->request()->getValue('director'));
-        $movie->setYear($this->request()->getValue('year'));
-        $movie->save();
+        $test = $this->request()->getValue('year');
+        if ($test > 0 && $test <=  date("Y")) {
+            $movie->setName($this->request()->getValue('name'));
+            $movie->setDirector($this->request()->getValue('director'));
+            $movie->setYear($this->request()->getValue('year'));
+            $movie->save();
+        }
         return $this->redirect($this->url("movies.index"));
+
     }
 
     public function create() {
