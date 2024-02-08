@@ -15,18 +15,18 @@ class DBAuthenticator implements IAuthenticator
 
     /**
      * Verify, if the user is in DB and has his password is correct
-     * @param $userLogin
-     * @param $pass
+     * @param $login
+     * @param $password
      * @return bool
      * @throws \Exception
      */
-    function login($userLogin, $pass): bool
+    function login($login, $password): bool
     {
-        $user = User::getAll("loginName = ?", [$userLogin]);
+        $user = User::getAll("loginName = ?", [$login]);
 
         if (count($user) == 1) {
             $user = $user[0];
-            if (password_verify($pass, $user->getPassword())) {
+            if (password_verify($password, $user->getPassword())) {
                 $_SESSION['user'] = $user;
                 $_SESSION['id'] = $user->getId();
                 return true;

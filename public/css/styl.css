@@ -45,6 +45,10 @@ iframe {
 
 form {
     margin: 0 auto;
-    width: 25%;
+    width: 75%;
     text-align: center;
+}
+
+.form-label {
+    font-weight: bold;
 }

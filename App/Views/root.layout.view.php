@@ -14,7 +14,7 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="public/css/styl.css">
-    <script src="public/js/script.js"></script>
+    <script src="public/js/script.js" defer></script>
 </head>
 
 <body>
@@ -43,7 +43,7 @@
                 <?php if ($auth->isLogged()) { ?>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <p class="nav-link">Logged user: <b><?= $auth->getLoggedUserName() ?></b><p>
+                        <a class="nav-link">Logged user: <b><?= $auth->getLoggedUserName() ?></b><a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= $link->url("auth.logout") ?>">Logout</a>

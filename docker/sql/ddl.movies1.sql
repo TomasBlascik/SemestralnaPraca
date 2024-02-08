@@ -20,7 +20,7 @@ CREATE TABLE reviews (id int(11) NOT NULL AUTO_INCREMENT,
                         FOREIGN KEY (author_id) REFERENCES users (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO users VALUES ('1', 'admin', '$2y$10$UFTeU4NbDVZBX0w5wF1YReRkphundjjr8RA2lEkbihvFoHb/9tMam');
+INSERT INTO users VALUES ('1', 'admin', '$2y$10$BwZFXOBzgO6LKT/sABTTWOfQuXF73gKtvkSyxN5Wwn3.5MX5lRFOG');
 
 INSERT INTO reviews VALUES ('1', 'Nadpis1',
                             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel gravida turpis. Cras quis vulputate mi. Ut porta a est vitae venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus lorem nec ex egestas congue. Suspendisse varius consectetur lacinia. Curabitur odio nisi, commodo vel venenatis non, congue aliquam mi. Nulla porttitor id nibh vitae fringilla. Nullam semper, sem sollicitudin elementum tristique, sapien erat aliquam leo, id ullamcorper lacus velit eget augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas rhoncus posuere libero, nec vulputate velit efficitur sed. Aliquam luctus eros id justo vehicula, at mollis ex facilisis. Morbi ultrices ipsum sit amet euismod suscipit. Vestibulum ligula velit, ullamcorper eget est et, fringilla malesuada risus. Suspendisse sed aliquam urna.

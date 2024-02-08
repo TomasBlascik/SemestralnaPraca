@@ -38,8 +38,20 @@ class AuthController extends AControllerBase
             }
         }
 
-        $data = ($logged === false ? ['message' => 'Zlý login alebo heslo!'] : []);
-        return $this->html($data);
+        if ($logged === false) {
+            $errorsMessage = "Wrong login or password.";
+            $formErrorsLogin = $this->formErrorsLogin();
+            $formErrorsPassword = $this->formErrorsPassword();
+            return $this->html(
+                [
+                    'errorsMessage' => $errorsMessage,
+                    'errorsLogin' => $formErrorsLogin,
+                    'errorsPassword' => $formErrorsPassword
+                ], 'login'
+            );
+        } else {
+            return $this->html([]);
+        }
     }
 
     /**
@@ -50,5 +62,24 @@ class AuthController extends AControllerBase
     {
         $this->app->getAuth()->logout();
         return $this->redirect($this->url('reviews.index'));
+    }
+
+    private function formErrorsLogin(): array {
+        $errors = [];
+        $login = trim((string)($this->request()->getValue('login')));
+
+        if (empty($login)) {
+            $errors[] = "Login can't be empty.";
+        }
+        return $errors;
+    }
+
+    private function formErrorsPassword(): array {
+        $errors = [];
+        $password = trim((string)($this->request()->getValue('password')));
+        if (empty($password)) {
+            $errors[] = "Password can't be empty.";
+        }
+        return $errors;
     }
 }

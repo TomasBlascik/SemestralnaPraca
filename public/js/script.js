@@ -1,5 +1,4 @@
-window.onload = function () {
-
+    quote = document.getElementById("quote");
     quote.onmouseover = function () {
         quote = document.getElementById("quote");
         var quotes = [];
@@ -17,4 +16,3 @@ window.onload = function () {
         var random = Math.floor(Math.random() * quotes.length);
         quote.innerHTML = quotes[random];
     }
-}
