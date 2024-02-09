@@ -10,6 +10,7 @@ class Movie extends Model
     protected $name;
     protected $director;
     protected $year;
+    protected $picture;
 
     /**
      * @return mixed
@@ -73,6 +74,22 @@ class Movie extends Model
     public function setYear($year): void
     {
         $this->year = $year;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * @param mixed $picture
+     */
+    public function setPicture($picture): void
+    {
+        $this->picture = $picture;
     }
 
 

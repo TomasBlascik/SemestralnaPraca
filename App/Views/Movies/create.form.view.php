@@ -2,7 +2,7 @@
 /** @var Array $data */
 ?>
 
-<form method="post" action="?c=movies&a=store">
+<form method="post" action="?c=movies&a=store" enctype="multipart/form-data">
     <?php if ($data['movie']->getId()) { ?>
         <input type="hidden" name="id" value="<?= $data['movie']->getId() ?>">
     <?php } ?>
@@ -48,6 +48,24 @@
         <?php endforeach ?>
     <?php endif; ?>
     <!--year errors end-->
+
+    <div class="mb-3">
+        <label for="inputPicture" class="form-label">Picture</label>
+        <?php if (@$data['movie']?->getPicture() != ""): ?>
+            <div>Current picture: <?= substr($data['movie']->getPicture(), strpos($data['movie']->getPicture(), '-') + 1)  ?></div>
+        <?php endif; ?>
+        <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
+        <input id="inputPicture" type="file" name="picture" class="form-control">
+    </div>
+    <!--picture errors-->
+    <?php if (!is_null(@($data['errorsPicture']))):
+        foreach ($data['errorsPicture'] as $errorPicture): ?>
+            <div class="alert alert-danger" role="alert">
+                <?= $errorPicture ?>
+            </div>
+        <?php endforeach ?>
+    <?php endif; ?>
+    <!--picture errors end-->
 
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

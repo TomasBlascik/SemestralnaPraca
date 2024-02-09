@@ -2,6 +2,7 @@ CREATE TABLE movies ( id int(11) NOT NULL AUTO_INCREMENT,
                         name varchar(100) NOT NULL,
                         director text NOT NULL,
                         year int(11) NOT NULL,
+                        picture varchar(300),
                         PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -43,8 +44,8 @@ Proin vel scelerisque lectus. Nunc a aliquet justo. Praesent mattis purus vitae 
                             '1');
 INSERT INTO reviews VALUES ('2', 'Nadpis2', 'text', '1');
 
-INSERT INTO movies  VALUES ('1', 'The Matrix', 'Lana Wachowski, Lilly Wachowski', '1999');
-INSERT INTO movies  VALUES ('2', 'Fight Club', 'David Fincher', '1999');
-INSERT INTO movies  VALUES ('3', 'Succession', 'Jesse Armstrong', '2018');
-INSERT INTO movies  VALUES ('4', 'Inception', 'Christopher Nolan', '2010');
+INSERT INTO movies  VALUES ('1', 'The Matrix', 'Lana Wachowski, Lilly Wachowski', '1999', '');
+INSERT INTO movies  VALUES ('2', 'Fight Club', 'David Fincher', '1999', '');
+INSERT INTO movies  VALUES ('3', 'Succession', 'Jesse Armstrong', '2018', '');
+INSERT INTO movies  VALUES ('4', 'Inception', 'Christopher Nolan', '2010', '');
 
